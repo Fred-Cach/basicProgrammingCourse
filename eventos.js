@@ -79,8 +79,9 @@ const dibujando = (e) => {
 // cuadrito.addEventListener("touchmove", jugando);
 cuadrito.addEventListener("pointerdown", comenzando);
 cuadrito.addEventListener("pointerup", comenzando);
-cuadrito.addEventListener("pointercancel", comenzando);
+// cuadrito.addEventListener("pointercancel", comenzando);
 cuadrito.addEventListener("pointermove", dibujando);
+// cuadrito.addEventListener("", dibujando);
 
 // function dibujarTeclado(evento) {
 //   var colorcito = "#FAA";
