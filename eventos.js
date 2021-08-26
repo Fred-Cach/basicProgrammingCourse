@@ -43,9 +43,7 @@ const comenzando = (e) => {
 
 const dibujando = (e) => {
   if (onOff) {
-    let color = colorFirma.value;
-
-    dibujarLinea(color, x, y, e.offsetX, e.offsetY, papel);
+    dibujarLinea(colorFirma.value, x, y, e.offsetX, e.offsetY, papel);
     x = e.offsetX;
     y = e.offsetY;
   }
