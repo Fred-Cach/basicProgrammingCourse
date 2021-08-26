@@ -8,6 +8,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        font-size: 22px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
       canvas {
         margin: 20px;
@@ -17,8 +19,11 @@
     </style>
   </head>
   <body>
-    <canvas width="500" height="500" id="area_de_dibujo"></canvas>
-    <p>Manten pulsado para dibujar</p>
+    <canvas width="600" height="400" id="area_de_dibujo"></canvas>
+    <p>
+      Elija un color <input type="color" id="colorFirma" /> e inserte su firma
+      digital.
+    </p>
     <script src="eventos.js"></script>
   </body>
 </html>

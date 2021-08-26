@@ -23,22 +23,28 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo) {
   lienzo.closePath();
 }
 
-const color = "red";
-
 let onOff;
 let x;
 let y;
 
 const comenzando = (e) => {
-  onOff ? (onOff = false) : (onOff = true);
-  x = e.offsetX;
-  y = e.offsetY;
+  // onOff ? (onOff = false) : (onOff = true);
+  if (onOff) {
+    onOff = false;
+  } else {
+    onOff = true;
+    x = e.offsetX;
+    y = e.offsetY;
+  }
+
   console.log(e);
   console.log(onOff, x, y);
 };
 
 const dibujando = (e) => {
   if (onOff) {
+    let color = colorFirma.value;
+
     dibujarLinea(color, x, y, e.offsetX, e.offsetY, papel);
     x = e.offsetX;
     y = e.offsetY;
