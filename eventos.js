@@ -31,51 +31,56 @@ let y;
 
 const comenzando = (e) => {
   onOff ? (onOff = false) : (onOff = true);
-  x = e.layerX;
-  y = e.layerY;
+  x = e.offsetX;
+  y = e.offsetY;
+  console.log(e);
   console.log(onOff, x, y);
 };
 
 const dibujando = (e) => {
   if (onOff) {
-    dibujarLinea(color, x, y, e.layerX, e.layerY, papel);
-    x = e.layerX;
-    y = e.layerY;
+    dibujarLinea(color, x, y, e.offsetX, e.offsetY, papel);
+    x = e.offsetX;
+    y = e.offsetY;
   }
 };
 
-const tocando = (e) => {
-  onOff ? (onOff = false) : (onOff = true);
-  if (onOff) {
-    x = e.touches[0].clientX;
-    y = e.touches[0].clientY;
-  }
+// const tocando = (e) => {
+//   onOff ? (onOff = false) : (onOff = true);
+//   if (onOff) {
+//     x = e.touches[0].clientX;
+//     y = e.touches[0].clientY;
+//   }
 
-  console.log(e);
-  console.log(onOff, x, y);
-};
+//   console.log(e);
+//   console.log(onOff, x, y);
+// };
 
-const jugando = (e) => {
-  if (onOff) {
-    dibujarLinea(
-      color,
-      x,
-      y,
-      e.touches[0].clientX,
-      e.touches[0].clientY,
-      papel
-    );
-    x = e.touches[0].clientX;
-    y = e.touches[0].clientY;
-  }
-};
+// const jugando = (e) => {
+//   if (onOff) {
+//     dibujarLinea(
+//       color,
+//       x,
+//       y,
+//       e.touches[0].clientX,
+//       e.touches[0].clientY,
+//       papel
+//     );
+//     x = e.touches[0].clientX;
+//     y = e.touches[0].clientY;
+//   }
+// };
 
-cuadrito.addEventListener("mousedown", comenzando);
-cuadrito.addEventListener("mouseup", comenzando);
-cuadrito.addEventListener("mousemove", dibujando);
-cuadrito.addEventListener("touchstart", tocando);
-cuadrito.addEventListener("touchend", tocando);
-cuadrito.addEventListener("touchmove", jugando);
+// cuadrito.addEventListener("mousedown", comenzando);
+// cuadrito.addEventListener("mouseup", comenzando);
+// cuadrito.addEventListener("mousemove", dibujando);
+// cuadrito.addEventListener("touchstart", tocando);
+// cuadrito.addEventListener("touchend", tocando);
+// cuadrito.addEventListener("touchmove", jugando);
+cuadrito.addEventListener("pointerdown", comenzando);
+cuadrito.addEventListener("pointerup", comenzando);
+cuadrito.addEventListener("pointercancel", comenzando);
+cuadrito.addEventListener("pointermove", dibujando);
 
 // function dibujarTeclado(evento) {
 //   var colorcito = "#FAA";
@@ -103,9 +108,9 @@ cuadrito.addEventListener("touchmove", jugando);
 // const trazando = (sw, x, y) => {
 //   if (sw) {
 //     const pintando = (e) => {
-//       dibujarLinea(color, x, y, e.layerX, e.layerY, papel);
-//       x = e.layerX;
-//       y = e.layerY;
+//       dibujarLinea(color, x, y, e.offsetX, e.offsetY, papel);
+//       x = e.offsetX;
+//       y = e.offsetY;
 //     };
 //     return pintando;
 //   }
@@ -118,8 +123,8 @@ cuadrito.addEventListener("touchmove", jugando);
 
 //   const dibujando = (ev) => {
 //     if (ev) {
-//       x = ev.layerX;
-//       y = ev.layerY;
+//       x = ev.offsetX;
+//       y = ev.offsetY;
 //     }
 
 //     sw ? (sw = false) : (sw = true);
@@ -135,23 +140,23 @@ cuadrito.addEventListener("touchmove", jugando);
 
 // const dibujarMouse = (e) => {
 //   if () {
-//     dibujarLinea(color, x, y, e.layerX, e.layerY, papel);
-//     x = e.layerX;
-//     y = e.layerY;
+//     dibujarLinea(color, x, y, e.offsetX, e.offsetY, papel);
+//     x = e.offsetX;
+//     y = e.offsetY;
 //   }
 // };
 
 // const iniciarMouseMov = (click) => {
 //   let trazando = (e) => {
-//     dibujarLinea(color, x, y, e.layerX, e.layerY, papel);
-//     x = e.layerX;
-//     y = e.layerY;
+//     dibujarLinea(color, x, y, e.offsetX, e.offsetY, papel);
+//     x = e.offsetX;
+//     y = e.offsetY;
 //   };
 
 //   if (click == "down") {
 //     let dibujando = (e) => {
-//       x = e.layerX;
-//       y = e.layerY;
+//       x = e.offsetX;
+//       y = e.offsetY;
 
 //       console.log("try");
 
@@ -166,19 +171,19 @@ cuadrito.addEventListener("touchmove", jugando);
 //   }
 
 //   //   let sw = false;
-//   //   const paintOn = (ev = { layerX: 0, layerY: 0 }) => {
+//   //   const paintOn = (ev = { offsetX: 0, offsetY: 0 }) => {
 
 //   //     const dibujo = (e) => {
-//   //       dibujarLinea(color, x, y, e.layerX, e.layerY, papel);
-//   //       x = e.layerX;
-//   //       y = e.layerY;
+//   //       dibujarLinea(color, x, y, e.offsetX, e.offsetY, papel);
+//   //       x = e.offsetX;
+//   //       y = e.offsetY;
 //   //     };
 
 //   //     if (!sw) {
 //   //       sw = true;
 //   //       console.log(sw);
-//   //       let x = ev.layerX;
-//   //       let y = ev.layerY;
+//   //       let x = ev.offsetX;
+//   //       let y = ev.offsetY;
 
 //   //       return dibujo;
 //   //     } else {
@@ -196,5 +201,5 @@ cuadrito.addEventListener("touchmove", jugando);
 // let move = down();
 // function dibujarMouse(e) {
 //   var color = "#0F0";
-//   dibujarLinea(color, e.layerX, e.layerY, e.layerX, e.layerY, papel);
+//   dibujarLinea(color, e.offsetX, e.offsetY, e.offsetX, e.offsetY, papel);
 // }
