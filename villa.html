@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Villa Campestre</title>
+    <style>
+      body {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 22px;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      }
+      canvas {
+        margin: 20px;
+        border: 1px solid;
+        touch-action: none;
+      }
+      #myProgress {
+        width: 40%;
+        background:transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #myBar {
+        width: 5%;
+        height: 30px;
+        background-color: red;
+        text-align: center; 
+        line-height: 30px; 
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="500" height="500" id="villaCampestre"> </canvas>
+    <div id="myProgress">
+      <div id="myBar">HAMBRE</div>
+      <!-- <div>HAMBRE</div> -->
+    </div>
+    <script src="villa.js"></script>
+    </script>
+  </body>
+</html>
