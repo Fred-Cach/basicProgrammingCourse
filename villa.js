@@ -60,10 +60,6 @@ class imgC {
   }
 }
 
-for (let img of imgSrc) {
-  imgObj.push(new imgC(img));
-}
-
 const dibujar = () => {
   imgObj.forEach((imgO) => {
     let url = imgO.url;
@@ -105,8 +101,6 @@ const huntOn = (e) => {
   dibujar();
 };
 
-document.addEventListener("keyup", huntOn);
-
 const devour = () => {
   let unitValue = 40 / preyZone.length;
   let width = unitValue;
@@ -123,3 +117,8 @@ const devour = () => {
     bar.style.color = "red";
   }
 };
+
+for (let img of imgSrc) {
+  imgObj.push(new imgC(img));
+}
+document.addEventListener("keyup", huntOn);
