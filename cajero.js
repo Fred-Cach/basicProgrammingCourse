@@ -25,7 +25,6 @@ const extraerDinero = () => {
         div >= b.cantidad ? (papeles = b.cantidad) : (papeles = div);
         papeles ? aEntregar.push(new Billete(b.valor, papeles)) : null;
         ingreso -= b.valor * papeles;
-        // console.log(ingreso);
       }
     }
     if (!ingreso) {
@@ -41,7 +40,6 @@ Lo has recibido de esta manera:${entregado}`);
   } else {
     window.alert("El cajero no cuenta con suficiente dinero disponible.");
   }
-  //   console.log(entregado, ingreso);
   dinero.value = null;
 };
 
