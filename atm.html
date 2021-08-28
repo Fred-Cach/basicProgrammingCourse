@@ -7,23 +7,42 @@
     <title>Cajero automático</title>
     <style>
       body {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 20px;
+        margin: 0px;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
       }
+      #cajero {
+        border-radius: 16px;
+        background-color: rgb(2, 4, 80);
+        padding: 4px 16px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      #wallet {
+        padding-right: 120px;
+        max-width: 50vw;
+      }
+      div > img {
+        width: 160px;
+        margin-right: -120px;
+      }
     </style>
   </head>
   <body>
-    <p>
-      <img src="cajero.gif" />
-    </p>
+    <div>
+      <p id="cajero">Monto Disponible</p>
+    </div>
+    <img src="cajero.gif" />
     <p>
       <input type="number" id="dinero" />
       <input type="button" value="Extraer" id="extraer" />
     </p>
-    <p id="resultado"></p>
+    <!-- <p id="resultado"></p> -->
+    <div id="wallet"></div>
     <script src="cajero.js"></script>
   </body>
 </html>
