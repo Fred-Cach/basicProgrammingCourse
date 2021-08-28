@@ -11,7 +11,7 @@ const cursos = (req, res) => {
 app.get("/", inicio);
 app.get("/cursos", cursos);
 
-app.listen(3000);
+app.listen(8989);
 
 // const express = require("express");
 // const app = express();
